@@ -22,7 +22,13 @@
   </scroll-view>
 
   <!-- 视频的列表区域 -->
-  <scroll-view class="videoScroll" scroll-y>
+  <scroll-view 
+  class="videoScroll" 
+  scroll-y
+  refresher-enabled
+  bindrefresherrefresh="handleRefresher"
+  refresher-triggered = "{{isTriggered}}"
+  bindscrolltolower="handleToLower">
     <view class="videoItem"
     wx:for="{{videoList}}"
     wx:key="id">
@@ -33,7 +39,9 @@
       poster="{{item.data.coverUrl}}"
       wx:if="{{videoId === item.data.vid}}"
       autoplay
-      object-fit="cover"></video>
+      object-fit="cover"
+      bindtimeupdate="handleTimeUpdate"
+      bindended="handleEnded"></video>
 
       <!-- 性能优化:使用image图片代替video标签 -->
       <image
