@@ -3,7 +3,7 @@
   <!-- 头部区域 -->
   <view class="header">
     <image class="" src="/static/images/video/video.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
-    <view class="search">搜索歌曲</view>
+    <view class="search" bindtap="toSearch">搜索歌曲</view>
     <image class="" src="/static/images/logo.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
   </view>
 
